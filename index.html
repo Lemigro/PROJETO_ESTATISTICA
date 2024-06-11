@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="icon" href="/img/logo_fnr.png" type="image/png">
+    <title>Análise de Dados de Video Games</title>
+</head>
+
+<body>
+    
+    <header>
+        <nav class="navbar navbar-dark">
+            <div class="container-fluid">
+                <span class="navbar-brand mb-0 h1 text-center w-100 fs-1">Análise de Dados de Video Games</span>
+            </div>
+        </nav>
+    </header>
+    <br>
+
+    <section id="report">
+        <h2 class="text-center mb-4">Relatório</h2>
+        <div class="card mb-4">
+            <div class="card-body">
+                <h3 class="card-title">Objetivos da Pesquisa</h3>
+                <p>Este site o resultado de uma pesquisa estatística, com o título:
+                    <strong>Explorando as tendências e preferências dos jogadores, bem como a variação de preços ao redor do mundo: 
+                        uma análise estatística sobre video games.</strong> O objetivo da pesquisa é entender as preferências dos jogadores de video games,
+                    analisando diferentes aspectos como gênero, plataforma preferida, tipos de jogos preferidos, entre
+                    outros. A pesquisa visa fornecer insights valiosos para a indústria de jogos e para os pesquisadores
+                    interessados no mercado de entretenimento digital.
+                </p>
+
+                <h3 class="card-title">Entendendo a Problemática</h3>
+                <p>A pesquisa aborda a questão de como a indústria pode escolher os jogos mais rentáveis para investir.
+                    Isso envolve identificar quais tipos que têm maior potencial de sucesso financeiro e engajamento do
+                    público. A análise se concentra em variáveis como gênero, orçamento e classificação indicativa. Ao
+                    fornecer insights sobre esses aspectos, a pesquisa visa ajudar os produtores de jogos a tomarem
+                    decisões mais informadas e estratégicas, minimizando o risco de fracasso financeiro e maximizando os
+                    retornos.</p>
+
+                <h3 class="card-title">Metodologia</h3>
+                <p>A análise utilizará dados coletados por meio de arquivo CSV e análise de dados existentes. Serão
+                    utilizadas técnicas estatísticas como análise descritiva, testes de associação e regressão logística
+                    para analisar os dados. A amostra será composta por jogadores de diferentes faixas etárias, sexo, 
+                    localizações geográficas e preferências de jogos.</p>
+
+
+                <h3 class="card-title">Analíses</h3>
+                <ul>
+                    <li>Avaliação Média da Crítica: A maioria dos jogos possuem uma avaliação média acima de 70,
+                        indicando uma recepção positiva por parte da crítica.</li>
+                    <li>Avaliação Média dos Usuários: A distribuição das avaliações dos usuários é similar à das
+                        críticas, mas com uma leve tendência a ser mais polarizada.</li>
+                    <li>Top 10 Consoles: Os consoles com o maior número de jogos lançados são predominantes nas últimas
+                        duas décadas, refletindo sua popularidade e suporte das desenvolvedoras.</li>
+                    <li>Distribuição Percentual: A análise mostra que apenas algumas plataformas dominam o mercado,
+                        enquanto outras possuem uma representação menor.</li>
+                    <li>Comparação de Preços: Existe uma correlação entre os preços de jogos na Europa e nos EUA, com
+                        alguns outliers que podem ser investigados mais a fundo.</li>
+                    <li>Gráfico 1 - Média das Críticas</li>
+                    <li>Gráfico 2 - Média de avaliação dos Usuários</li>
+                    <li>Gráfico 3 - Top 10 Consoles por Número de Jogos</li>
+                    <li>Gráfico 4 - Distribuição Percentual de Jogos por Plataforma</li>
+                    <li>Gráfico 5 - Comparação de Preços entre Regiões Europa Vs Estados Unidos</li>
+                    <li>Gráfico 6 - Vendas Globais por Plataforma</li>
+                    <li>Gráfico 7 - Vendas Globais por Jogos</li>
+                    <li>Gráfico 8 - Tendência de Lançamentos de Jogos ao Longo dos Anos</li>
+                    <li>Gráfico 9 - Preços por Gênero</li>
+                    <li>Gráfico 10 - Box Plot</li>
+                    <li>Gráfico 11 - Gráfico de Linha com Marcadores das Vendas Globais ao Longo dos Anos por Plataforma</li>
+                    <li>Gráfico 12 - Desvio Padrão</li>
+                    <li>Gráfico 13 - Gráfico de Violino</li>
+                    <li>Gráfico 14 - Gráfico de Área Ampliada</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="container mt-4">
+        <section id="charts">
+            <h2 class="text-center mb-4">Gráficos e Códigos</h2>
+            <br>
+            <div class="row row-cols-1 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 1 - Média das Críticas</h3>
+                            <img src="/img/media_critica.png" class="card-img-top img-fluid" alt="Gráfico 1"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Histograma da Avaliação Média da Crítica
+sns.histplot(df['Avaliacao_Critica'], bins=20, kde=True, color='skyblue')
+plt.title('Distribuição da Avaliação Média da Crítica')
+plt.xlabel('Avaliação Média da Crítica')
+plt.ylabel('Frequência')
+plt.show()
+plt.figure(figsize=(10, 6))
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 2 - Média de avaliação dos Usuários</h3>
+                            <img src="/img/media_usuarios.png" class="card-img-top img-fluid" alt="Gráfico 2"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Histograma da Avaliação Média dos Usuários
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Avaliacao_Usuario'], bins=20, kde=True, color='salmon')
+plt.title('Distribuição da Avaliação Média dos Usuários')
+plt.xlabel('Avaliação Média dos Usuários')
+plt.ylabel('Frequência')
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 3 - Top 10 Consoles por Número de Jogos</h3>
+                            <img src="/img/top_10_consoles.png" class="card-img-top img-fluid" alt="Gráfico 3"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Contagem de jogos por console
+contagem_consoles = dados['Platform'].value_counts().nlargest(10)
+# Plotar gráfico de barras
+plt.figure(figsize=(12, 6))
+contagem_consoles.plot(kind='bar', color='skyblue')
+plt.title('Top 10 Consoles por Número de Jogos')
+plt.xlabel('Console')
+plt.ylabel('Número de Jogos')
+plt.xticks(rotation=45)
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 4 - Distribuição Percentual de Jogos por Plataforma</h3>
+                            <img src="/img/percentual_plataforma.png" class="card-img-top img-fluid" alt="Gráfico 4"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Calcular a distribuição percentual das plataformas
+distribuicao_percentual = dados['Platform'].value_counts(normalize=true)
+
+# Identificar plataformas que representam menos de 2% do total
+plataformas_menores = distribuicao_percentual[distribuicao_percentual < 0.02].index
+
+# Filtrar o DataFrame para excluir plataformas menores
+dados_filtrados = dados[~dados['Platform'].isin(plataformas_menores)]
+
+# Verificar a distribuição percentual das plataformas no DataFrame filtrado
+distribuicao_percentual_filtrada = dados_filtrados['Platform'].value_counts(normalize=true)
+
+# Criar um gráfico de pizza da distribuição percentual por plataforma no DataFrame filtrado
+plt.figure(figsize=(10, 10))
+distribuicao_percentual_filtrada.plot(kind='pie', autopct='%1.1%%', startangle=90)
+plt.title('Distribuição Percentual de Jogos por Plataforma')
+plt.ylabel('')  # Remove o rótulo do eixo Y
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 5 - Comparação de Preços entre Regiões Europa Vs Estados Unidos</h3>
+                            <img src="/img/europa_eua.png" class="card-img-top img-fluid" alt="Gráfico 5"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Comparação NA vs EUA
+plt.figure(figsize=(10, 8))
+plt.scatter(dados['NA_Sales'], dados['EU_Sales'], alpha=0.5)
+plt.title('Comparação de Preços - Europa vs. EUA')
+plt.xlabel('Preço na Europa (€)')
+plt.ylabel('Preço nos EUA ($)')
+plt.xlim(0, 50)  # Definir limites
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 6 - Vendas Globais por Plataforma</h3>
+                            <img src="/img/vendas_globais_plataforma.png" class="card-img-top img-fluid" alt="Gráfico 6"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Gráfico de barras para vendas por plataforma
+plt.figure(figsize=(12, 6))
+platform_sales = df.groupby('Platform')['Global_Sales'].sum().sort_values(ascending=False)
+platform_sales.plot(kind='bar', color='skyblue')
+plt.title('Vendas Globais por Plataforma')
+plt.xlabel('Plataforma')
+plt.ylabel('Vendas Globais (em milhões)')
+plt.xticks(rotation=45)
+plt.show()
+
+# Medidas de dispersão e tendência central das vendas globais
+print('Medidas de Dispersão:')
+print('Desvio Padrão de Vendas Globais:', df['Global_Sales'].std())
+print('Intervalo Interquartil de Vendas Globais:', df['Global_Sales'].quantile(0.75) - df['Global_Sales'].quantile(0.25))
+
+print('Medidas de Tendência Central:')
+print('Média de Vendas Globais:', df['Global_Sales'].mean())
+print('Mediana de Vendas Globais:', df['Global_Sales'].median())
+
+Medidas de Dispersão:
+Desvio Padrão de Vendas Globais: 1.5550279355699124
+Intervalo Interquartil de Vendas Globais: 0.41
+Medidas de Tendência Central:
+Média de Vendas Globais: 0.5374406555006628
+Mediana de Vendas Globais: 0.17
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 7 - Vendas Globais por Jogos</h3>
+                            <img src="/img/vendas_globais.png" class="card-img-top img-fluid" alt="Gráfico 7"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Histograma de Vendas Globais
+plt.figure(figsize=(10, 6))
+sns.histplot(df['Global_Sales'], bins=20, kde=True)
+plt.title('Distribuição de Vendas Globais de Jogos')
+plt.xlabel('Vendas Globais (em milhões)')
+plt.ylabel('Frequência')
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 8 - Tendência de Lançamentos de Jogos ao Longo dos Anos</h3>
+                            <img src="/img/tendencias.png" class="card-img-top img-fluid" alt="Gráfico 8"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Tendência de Lançamentos de Jogos ao Longo dos Anos
+plt.figure(figsize=(12, 6))
+dados['Year'].value_counts().sort_index().plot(kind='line', marker='o')
+plt.title('Tendência de Lançamentos de Jogos ao Longo dos Anos')
+plt.xlabel('Ano')
+plt.ylabel('Número de Lançamentos')
+plt.grid(True)
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 9 - Preços por Gênero</h3>
+                            <img src="/img/preco_genero.png" class="card-img-top img-fluid" alt="Gráfico 9"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Preço por Gênero
+plt.figure(figsize=(12, 8))
+sns.boxplot(x='Genre', y='Global_Sales', data=dados)
+plt.title('Distribuição de Preços por Gênero')
+plt.xlabel('Gênero')
+plt.ylabel('Preço no Mundo')
+plt.xticks(rotation=45)  # Rotaciona os rótulos do eixo X para melhor visualização
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 10 - Box Plot</h3>
+                            <img src="/img/box_plot.png" class="card-img-top img-fluid" alt="Gráfico 10"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Box Plot das Avaliações Globais dos Jogos por Plataforma
+plt.figure(figsize=(10, 6))
+sns.boxplot(x='Platform', y='Avaliacao_Critica', data=df, palette='Set3')
+plt.title('Box Plot das Avaliações Globais dos Jogos por Plataforma')
+plt.xlabel('Plataforma')
+plt.ylabel('Avaliação da Crítica')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 11 - Gráfico de Linha com Marcadores das Vendas Globais ao
+                                Longo dos Anos por Plataforma</h3>
+                            <img src="/img/marcadores.png" class="card-img-top img-fluid" alt="Gráfico 11"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Gráfico de Linha com Marcadores das Vendas Globais ao Longo dos Anos por Plataforma
+plt.figure(figsize=(10, 6))
+sns.lineplot(x='Year', y='Global_Sales', hue='Platform', data=df, marker='o')
+plt.title('Vendas Globais ao Longo dos Anos por Plataforma')
+plt.xlabel('Ano')
+plt.ylabel('Vendas Globais (milhões de unidades)')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.legend(title='Plataforma', loc='upper left')
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 12 - Desvio Padrão</h3>
+                            <img src="/img/desvio.png" class="card-img-top img-fluid" alt="Gráfico 12"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Calcular o desvio padrão das avaliações globais por plataforma
+desvio_padrao = df.groupby('Platform')['Avaliacao_Critica'].std().reset_index()
+
+# Swarm Plot do Desvio Padrão das Avaliações Globais dos Jogos por Plataforma
+plt.figure(figsize=(10, 6))
+sns.swarmplot(x='Platform', y='Avaliacao_Critica', data=desvio_padrao, palette='Set3', size=6)
+plt.title('Swarm Plot do Desvio Padrão das Avaliações Globais dos Jogos por Plataforma')
+plt.xlabel('Plataforma')
+plt.ylabel('Desvio Padrão da Avaliação da Crítica')
+plt.xticks(rotation=45)
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 13 - Gráfico de Violino</h3>
+                            <img src="/img/violino.png" class="card-img-top img-fluid" alt="Gráfico 13"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Plotar gráfico de violino
+plt.figure(figsize=(12, 8))
+sns.violinplot(x='Genre', y='Global_Sales', data=df, palette='viridis')
+plt.title('Distribuição das Vendas Globais por Gênero')
+plt.xlabel('Gênero')
+plt.ylabel('Vendas Globais ($ milhões)')
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h3 class="card-title">Gráfico 14 - Gráfico de Área Ampliada</h3>
+                            <img src="/img/area_ampliada.png" class="card-img-top img-fluid" alt="Gráfico 14"
+                                onclick="toggleFullscreen(this)">
+                            <pre><code>
+# Agrupar por ano e calcular as vendas globais
+vendas_por_ano = df.groupby('Year')['Global_Sales'].sum()
+
+# Plotar gráfico de área empilhada
+plt.figure(figsize=(12, 8))
+vendas_por_ano.plot(kind='area', stacked=False, colormap='viridis')
+plt.title('Vendas Globais de Jogos por Ano')
+plt.xlabel('Ano')
+plt.ylabel('Vendas Globais ($ bilhões)')
+plt.tight_layout()
+plt.show()
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer mt-auto py-3 bg-dark text-white text-center">
+        <div class="container">
+            <p class="mb-0">Projeto Estatística &copy; 2024</p>
+        </div>
+    </footer>
+
+    <script src="/JS/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>
