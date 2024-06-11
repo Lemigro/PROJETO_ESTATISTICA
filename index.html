@@ -13,15 +13,9 @@
 </head>
 
 <body>
-    
-    <header>
-        <nav class="navbar navbar-dark">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 text-center w-100 fs-1">Análise de Dados de Video Games</span>
-            </div>
-        </nav>
-    </header>
-    <br>
+<br>
+   
+
 
     <section id="report">
         <h2 class="text-center mb-4">Relatório</h2>
@@ -29,8 +23,10 @@
             <div class="card-body">
                 <h3 class="card-title">Objetivos da Pesquisa</h3>
                 <p>Este site o resultado de uma pesquisa estatística, com o título:
-                    <strong>Explorando as tendências e preferências dos jogadores, bem como a variação de preços ao redor do mundo: 
-                        uma análise estatística sobre video games.</strong> O objetivo da pesquisa é entender as preferências dos jogadores de video games,
+                    <strong>Explorando as tendências e preferências dos jogadores, bem como a variação de preços ao
+                        redor do mundo:
+                        uma análise estatística sobre video games.</strong> O objetivo da pesquisa é entender as
+                    preferências dos jogadores de video games,
                     analisando diferentes aspectos como gênero, plataforma preferida, tipos de jogos preferidos, entre
                     outros. A pesquisa visa fornecer insights valiosos para a indústria de jogos e para os pesquisadores
                     interessados no mercado de entretenimento digital.
@@ -47,9 +43,116 @@
                 <h3 class="card-title">Metodologia</h3>
                 <p>A análise utilizará dados coletados por meio de arquivo CSV e análise de dados existentes. Serão
                     utilizadas técnicas estatísticas como análise descritiva, testes de associação e regressão logística
-                    para analisar os dados. A amostra será composta por jogadores de diferentes faixas etárias, sexo, 
+                    para analisar os dados. A amostra será composta por jogadores de diferentes faixas etárias, sexo,
                     localizações geográficas e preferências de jogos.</p>
 
+                <h3 class="card-title">Dicionário de Dados</h3>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nome do campo</th>
+                                <th>Descrição</th>
+                                <th>Tipo de dado</th>
+                                <th>Restrições</th>
+                                <th>Origem do dado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rank</td>
+                                <td>Classificação do jogo em relação às vendas globais</td>
+                                <td>Inteiro</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Nome</td>
+                                <td>Nome do Jogo</td>
+                                <td>Texto</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Plataforma</td>
+                                <td>Plataforma em que o jogo foi lançado</td>
+                                <td>Texto</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Year</td>
+                                <td>Ano de lançamento do jogo</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Genre</td>
+                                <td>Gênero do jogo</td>
+                                <td>Texto</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Publisher</td>
+                                <td>Editora do Game</td>
+                                <td>Texto</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>NA_Sales</td>
+                                <td>Vendas na América do Norte (em milhões de cópias)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>EU_Sales</td>
+                                <td>Vendas na Europa (em milhões de cópias)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>JP_Sales</td>
+                                <td>Vendas no Japão (em milhões de cópias)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Other_Sales</td>
+                                <td>Vendas em outros países (em milhões de cópias)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Global_Sales</td>
+                                <td>Vendas globais totais (em milhões de cópias)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Avaliacao_Critica</td>
+                                <td>Avaliação crítica do jogo (média das avaliações)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                            <tr>
+                                <td>Avaliacao_Usuario</td>
+                                <td>Avaliação dos usuários do jogo (média das avaliações)</td>
+                                <td>Numérico</td>
+                                <td>Sem Restrições</td>
+                                <td>Arquivo CSV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
                 <h3 class="card-title">Analíses</h3>
                 <ul>
@@ -73,7 +176,8 @@
                     <li>Gráfico 8 - Tendência de Lançamentos de Jogos ao Longo dos Anos</li>
                     <li>Gráfico 9 - Preços por Gênero</li>
                     <li>Gráfico 10 - Box Plot</li>
-                    <li>Gráfico 11 - Gráfico de Linha com Marcadores das Vendas Globais ao Longo dos Anos por Plataforma</li>
+                    <li>Gráfico 11 - Gráfico de Linha com Marcadores das Vendas Globais ao Longo dos Anos por Plataforma
+                    </li>
                     <li>Gráfico 12 - Desvio Padrão</li>
                     <li>Gráfico 13 - Gráfico de Violino</li>
                     <li>Gráfico 14 - Gráfico de Área Ampliada</li>
@@ -181,7 +285,8 @@ plt.show()
                 <div class="col">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">Gráfico 5 - Comparação de Preços entre Regiões Europa Vs Estados Unidos</h3>
+                            <h3 class="card-title">Gráfico 5 - Comparação de Preços entre Regiões Europa Vs Estados
+                                Unidos</h3>
                             <img src="/img/europa_eua.png" class="card-img-top img-fluid" alt="Gráfico 5"
                                 onclick="toggleFullscreen(this)">
                             <pre><code>
